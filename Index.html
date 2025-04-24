@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keijo's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="background-canvas"></canvas>
+  <header>
+    <div class="top-right-links">
+      <div class="social-icons">
+        <div class="text-links">
+          <a href="#contact" class="text-link">Contact</a>
+          <a href="documents/Keijo-CV.pdf" target="_blank" class="text-link">Download CV</a>
+        </div>
+        <a href="https://www.instagram.com/keij0_/?hl=en" target="_blank">
+        <img src="Photo's/icons8-instagram.svg" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/keinan-jones/" target="_blank">
+        <img src="Photo's/icons8-linkedin.svg" alt="LinkedIn" class="social-icon">
+      </a>
+      <a href="https://github.com/Keijoo" target="_blank">
+        <img src="Photo's/icons8-github.svg" alt="GitHub" class="social-icon">
+      </a>
+    </div>   
+    </div>
+    <div class="profile-pic-container">
+      <img src="Photo's/keijo.png" alt="Keijo Profile Picture" class="profile-pic">
+    </div>        
+    <h1>Hello, I'm Keinan Iones</h1>
+    <h2>Web Developer</h2>
+  </header>
+
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I'm a passionate web developer who is currently studying programming . I love creating interactive experiences and I'm always looking for new ways to combine my skills with my passion for games, technology, and creative problem-solving.</p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skill-bar">
+      <div class="skill" style="width: 90%;">HTML/CSS</div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill" style="width: 65%;">JavaScript</div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill" style="width: 60%;">Unreal Engine</div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill" style="width: 75%;">Information Technology</div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill" style="width: 50%;">Python</div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill" style="width: 70%;">c++</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h3>Education</h3>
+    <p><strong>Bachelor's Degree in Information Technology</strong> | University Of South Wales (2021) | 2:1 </p>
+    <p><strong>A - Level</strong> | Coleg Gwent/ Ebbw Vale (2019) | ICT - B | Business Studdies - C | Media Studies - B </p>
+    <p>Currently studying Computer Programming at Luksia, with a focus on web development, game design and Finnish Language</p>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <ul>
+      <li>
+        <img src="assets/project1.png" alt="Project Screenshot" />
+        <p><strong>Cat Potion Game - (Working progress)</strong><br><em>Unreal Engine</em></p>
+      </li>
+      <li>
+        <a href="https://keijoo.github.io/xr-showcase/" target="_blank">
+          <img src="Photo's/XR.png" alt="VR/AR Website Preview" />
+        </a>
+        <p><strong>VR/AR Demo Site</strong><br><em>HTML / JS / CSS</em></p>
+      </li>
+      <li>
+        <a href="https://keijoo.github.io/TikTakToe2/" target="_blank">
+        <img src="Photo's/TTT.png" alt="Project Screenshot" /></a>
+        <p><strong>Tik Tak Toe</strong><br><em>HTML / JS / CSS</em></p>
+      </li>
+      <li>
+        <a href="https://keijoo.github.io/Tip-Calculator/" target="_blank">
+        <img src="Photo's/Tip.png" alt="Project Screenshot" /></a>
+        <p><strong>Tip Calculater</strong><br><em>HTML / JS / CSS</em></p>
+      </li>
+      <li>
+        <a href="https://keijoo.github.io//" target="_blank">
+        <img src="Photo's/SGallery.png" alt="Project Screenshot" /></a>
+        <p><strong>The Gallery</strong><br><em>Unreal Engine</em></p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <form action="https://formspree.io/f/mwpokzey" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" required />
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+  
+  <footer>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/keinan-jones/" target="_blank" class="social-link">
+        <img src="Photo's/icons8-linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/Keijoo" target="_blank" class="social-link">
+        <img src="Photo's/icons8-github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.instagram.com/keij0_/?hl=en" target="_blank" class="social-link">
+        <img src="Photo's/icons8-instagram.svg" alt="Instagram" />
+      </a>
+    </div>
+    <p>&copy; 2025 Keijoo Jones. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
