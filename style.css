@@ -29,7 +29,7 @@ header {
   padding: 3rem 1rem;
   text-align: center;
   background-color: #121212;
-  box-shadow: 0 4px 10px rgba(0, 196, 134, 0.932);
+  box-shadow: 0 4px 10px #ff2ef8;
   margin-bottom: 2rem;
 }
 
@@ -39,7 +39,7 @@ section {
   margin: auto;
   background-color: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 196, 134, 0.932);
+  box-shadow: 0 0 10px #ff2ef8;
   margin-bottom: 1.5rem;
   opacity: 0;
   transition: opacity 2s ease-out;
@@ -59,7 +59,7 @@ ul li {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+  box-shadow: 0 0 12px #00f7ff;
   transition: transform 0.3s ease;
 }
 
@@ -105,7 +105,7 @@ input {
 }
 
 button {
-  background-color: #ff2ef8;
+  background-color: #a01c9c;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -144,7 +144,7 @@ button:hover {
   max-width: 400px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+  box-shadow: 0 0 12px #00f7ff;
   transition: transform 0.3s ease;
   display: block;
   margin: auto;

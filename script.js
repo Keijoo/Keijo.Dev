@@ -59,11 +59,10 @@ class Particle {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0, 255, 174, ${this.alpha})`;
+    ctx.fillStyle = `rgba(0, 247, 255, ${this.alpha})`;
     ctx.fill();
   }
 }
-
 for (let i = 0; i < 150; i++) {
   particles.push(new Particle());
 }
