@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keijo Dev</title>
+  <link rel="icon" href="Photo's/favicon-32x32.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -32,12 +33,14 @@
       <img src="Photo's/keijo.png" alt="Keijo Profile Picture" class="profile-pic">
     </div>        
     <h1>Hello, I'm Keinan Jones</h1>
-    <h2>Web Developer</h2>
+    <h2><span class="role">Web Developer</span></h2>
   </header>
 
   <section id="about">
     <h3>About Me</h3>
+    <div class="about-text">
     <p>I'm a passionate web developer who is currently studying programming . I love creating interactive experiences and I'm always looking for new ways to combine my skills with my passion for games, technology, and creative problem-solving.</p>
+    </div>
   </section>
 
   <section id="skills">
@@ -65,16 +68,18 @@
 
   <section id="education">
     <h3>Education</h3>
+    <div class="about-text">
     <p><strong>Bachelor's Degree in Information Technology</strong> | University Of South Wales (2021) | 2:1 </p>
     <p><strong>A - Level</strong> | Coleg Gwent/ Ebbw Vale (2019) | ICT - B | Business Studdies - C | Media Studies - B </p>
     <p>Currently studying Computer Programming at Luksia, with a focus on web development, game design and Finnish Language</p>
+  </div>
   </section>
 
   <section id="projects">
     <h3>Projects</h3>
     <ul>
       <li>
-        <img src="assets/project1.png" alt="Project Screenshot" />
+        <img src="Photo's/CatGame.PNG" alt="Project Screenshot" />
         <p><strong>Cat Potion Game - (Work in progress)</strong><br><em>Unreal Engine</em></p>
       </li>
       <li>
@@ -94,7 +99,6 @@
         <p><strong>Tip Calculater</strong><br><em>HTML / JS / CSS</em></p>
       </li>
       <li>
-        <a href="https://keijoo.github.io//" target="_blank">
         <img src="Photo's/SGallery.png" alt="Project Screenshot" /></a>
         <p><strong>The Gallery</strong><br><em>Unreal Engine</em></p>
       </li>
@@ -103,15 +107,17 @@
 
   <section id="contact">
     <h3>Contact Me</h3>
-    <form action="https://formspree.io/f/mwpokzey" method="POST">
+    <form id="contact-form" action="https://formspree.io/f/mwpokzey" method="POST">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required />
+  
       <label for="message">Message:</label>
       <input type="text" id="message" name="message" required />
-
+  
       <button type="submit">Send</button>
     </form>
   </section>
+  
   
   <footer>
     <div class="socials">

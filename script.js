@@ -1,13 +1,33 @@
 // script.js
 function handleSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission (no page reload)
+  const form = document.getElementById("contact-form");
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
+  // Prepare the data to send via fetch
+  const formData = new FormData(form);
 
-  alert(`Thanks, ${email}! Your message has been received:\n\n"${message}"`);
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
+  // Send form data to Formspree using fetch
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => {
+    if (response.ok) {
+      alert(`Thanks, ${email}! Your message has been sent.`);
+      form.reset(); // Reset the form fields after submission
+    } else {
+      alert("There was an issue with the form submission. Please try again.");
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error submitting your message. Please try again.');
+  });
 }
+// Add event listener to form
+document.getElementById("contact-form").addEventListener('submit', handleSubmit);
+
 // Function to add an animation class when section is in view
 function animateOnScroll() {
   const sections = document.querySelectorAll('section');
@@ -21,7 +41,6 @@ function animateOnScroll() {
   });
 }
 window.addEventListener('scroll', animateOnScroll);
-
 
 const canvas = document.getElementById("background-canvas");
 const ctx = canvas.getContext("2d");
@@ -75,5 +94,4 @@ function animateParticles() {
   });
   requestAnimationFrame(animateParticles);
 }
-
 animateParticles();

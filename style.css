@@ -14,6 +14,8 @@ h1, h2, h3 {
   text-align: center;
   text-shadow: 0 0 15px #00f7ff;
   transition: all 0.3s ease;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 a {
@@ -26,13 +28,34 @@ a:hover {
 }
 
 header {
-  padding: 3rem 1rem;
+  position: relative; /* Default positioning */
+  padding-top: 20px; 
+  padding-bottom: 20px;
   text-align: center;
   background-color: #121212;
   box-shadow: 0 4px 10px #ff2ef8;
   margin-bottom: 2rem;
 }
 
+.role {
+  font-size: 1rem; 
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-top: 80px; /* Increase padding-top for mobile to make room for the navbar */
+  }
+  header h1, header h2 {
+    font-size: 1.5rem;
+  }
+  .profile-pic-container {
+    margin-bottom: 1.5rem; /* Increase space between the logo and content */
+  }
+  .social-icons {
+    margin-top: 0.2rem; /* Ensure icons don't crowd each other on mobile */
+  }
+}
 section {
   padding: 3rem;
   max-width: 900px;
@@ -238,7 +261,7 @@ footer p {
 ::-webkit-scrollbar-thumb {
   background: #ff2ef8; /* Neon cyan */
   border-radius: 10px;
-  border: 2px solid #121212; /* Optional border */
+  border: 2px solid #121212; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -299,4 +322,16 @@ footer p {
     width: 24px;
     height: 24px;
   }
+}
+
+/* Import Source Code Pro font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+
+.about-text {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.1rem; /* Slightly larger for better readability */
+  line-height: 1.6; /* Space between lines */
+  color: #e0e0e0; /* Softer text color */
+  margin-bottom: 1.5rem; /* Space between paragraphs */
 }
