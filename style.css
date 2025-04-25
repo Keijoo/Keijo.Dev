@@ -335,3 +335,9 @@ footer p {
   color: #e0e0e0; /* Softer text color */
   margin-bottom: 1.5rem; /* Space between paragraphs */
 }
+
+form[data-formspree] .fs-submitting,
+form[data-formspree] .fs-error,
+form[data-formspree] .fs-success {
+  display: none !important;
+}
