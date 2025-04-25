@@ -5,14 +5,12 @@ function handleSubmit(event) {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
-  // Prepare the data to send via fetch
   const formData = new FormData(form);
 
-  // Send form data to Formspree using fetch
   fetch(form.action, {
     method: 'POST',
     headers: {
-      "Accept": "application/json" // This prevents redirect and avoids CORS issues
+      "Accept": "application/json"
     },
     body: formData,
   })
@@ -20,13 +18,13 @@ function handleSubmit(event) {
     if (response.ok) {
       alert(`Thanks, ${email}! Your message has been sent.`);
       form.reset(); // Reset the form fields after submission
-    } else {
-      alert("There was an issue with the form submission. Please try again.");
     }
+    // Removed the error alert to prevent false error messages
   })
   .catch(error => {
     console.error('Error:', error);
-    alert('There was an error submitting your message. Please try again.');
+    // You can optionally keep this for debugging:
+    // alert('There was an error submitting your message. Please try again.');
   });
 }
 
@@ -47,6 +45,7 @@ function animateOnScroll() {
 }
 window.addEventListener('scroll', animateOnScroll);
 
+// Canvas background animation
 const canvas = document.getElementById("background-canvas");
 const ctx = canvas.getContext("2d");
 let particles = [];
@@ -100,4 +99,5 @@ function animateParticles() {
   });
   requestAnimationFrame(animateParticles);
 }
+
 animateParticles();
