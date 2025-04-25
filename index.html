@@ -120,62 +120,8 @@
 <script>
   document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
-
-    // Clear any previous error or success message
-    let messageElement = document.getElementById("form-message");
-    if (messageElement) {
-      messageElement.remove();
-    }
-
-    // Create a loading message (optional)
-    let loadingMessage = document.createElement("div");
-    loadingMessage.id = "form-message";
-    loadingMessage.textContent = "Submitting...";
-    document.getElementById("contact").appendChild(loadingMessage);
-
-    // Submit the form data to Formspree using fetch
-    fetch("https://formspree.io/f/mwpokzey", {
-      method: "POST",
-      body: new FormData(event.target),
-    })
-    .then(response => {
-      if (response.ok) {
-        // Remove the "Submitting..." message
-        loadingMessage.remove();
-        
-        // Show a success message below the form
-        let successMessage = document.createElement("div");
-        successMessage.id = "form-message";
-        successMessage.style.color = "green";
-        successMessage.textContent = "Message sent successfully!";
-        document.getElementById("contact").appendChild(successMessage);
-      } else {
-        // Remove the "Submitting..." message
-        loadingMessage.remove();
-        
-        // Show an error message if the response is not OK
-        showError("There was an issue with your submission. Please try again.");
-      }
-    })
-    .catch(error => {
-      // Remove the "Submitting..." message
-      loadingMessage.remove();
-      
-      // Catch any network or other errors and show a generic error message
-      showError("There was an error submitting your message. Please try again.");
-    });
   });
 
-  // Function to display error messages
-  function showError(message) {
-    let errorMessage = document.createElement("div");
-    errorMessage.id = "form-message";
-    errorMessage.style.color = "red";
-    errorMessage.textContent = message;
-
-    // Append the error message below the form
-    document.getElementById("contact").appendChild(errorMessage);
-  }
 </script>
   
   <footer>
