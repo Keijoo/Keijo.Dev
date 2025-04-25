@@ -117,13 +117,21 @@
       <button type="submit">Send</button>
     </form>
   </section>
- <script>
+<script>
   document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission
 
-    // Clear any previous error/success message
-    let errorMessage = document.getElementById("error-message");
-    if (errorMessage) errorMessage.remove();
+    // Clear any previous error or success message
+    let messageElement = document.getElementById("form-message");
+    if (messageElement) {
+      messageElement.remove();
+    }
+
+    // Create a loading message (optional)
+    let loadingMessage = document.createElement("div");
+    loadingMessage.id = "form-message";
+    loadingMessage.textContent = "Submitting...";
+    document.getElementById("contact").appendChild(loadingMessage);
 
     // Submit the form data to Formspree using fetch
     fetch("https://formspree.io/f/mwpokzey", {
@@ -132,23 +140,36 @@
     })
     .then(response => {
       if (response.ok) {
-        // Show success message
-        alert("Message sent successfully!");
+        // Remove the "Submitting..." message
+        loadingMessage.remove();
+        
+        // Show a success message below the form
+        let successMessage = document.createElement("div");
+        successMessage.id = "form-message";
+        successMessage.style.color = "green";
+        successMessage.textContent = "Message sent successfully!";
+        document.getElementById("contact").appendChild(successMessage);
       } else {
-        // Show error message if the response is not OK
-        showError("There was an issue with your submission.");
+        // Remove the "Submitting..." message
+        loadingMessage.remove();
+        
+        // Show an error message if the response is not OK
+        showError("There was an issue with your submission. Please try again.");
       }
     })
     .catch(error => {
+      // Remove the "Submitting..." message
+      loadingMessage.remove();
+      
       // Catch any network or other errors and show a generic error message
-      showError("There was an error submitting your message.");
+      showError("There was an error submitting your message. Please try again.");
     });
   });
 
   // Function to display error messages
   function showError(message) {
     let errorMessage = document.createElement("div");
-    errorMessage.id = "error-message";
+    errorMessage.id = "form-message";
     errorMessage.style.color = "red";
     errorMessage.textContent = message;
 
@@ -156,6 +177,7 @@
     document.getElementById("contact").appendChild(errorMessage);
   }
 </script>
+
 
   
   <footer>
