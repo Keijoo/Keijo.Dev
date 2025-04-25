@@ -117,7 +117,26 @@
       <button type="submit">Send</button>
     </form>
   </section>
-  
+  <script>
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    fetch("https://formspree.io/f/mwpokzey", {
+      method: "POST",
+      body: new FormData(event.target),
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Message sent!");
+      } else {
+        alert("There was an issue with your submission.");
+      }
+    })
+    .catch(error => {
+      alert("There was an error submitting your message.");
+    });
+  });
+</script>
   
   <footer>
     <div class="socials">
