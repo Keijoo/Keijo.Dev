@@ -1,30 +1,29 @@
-// script.js
 function handleSubmit(event) {
-  event.preventDefault(); // Prevent default form submission (no page reload)
+  event.preventDefault();
   const form = document.getElementById("contact-form");
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
-
   const formData = new FormData(form);
+
+  // Remove any default Formspree messages if they exist
+  const fsMessages = document.querySelectorAll(".fs-error, .fs-success, .fs-submitting");
+  fsMessages.forEach(el => el.remove());
 
   fetch(form.action, {
     method: 'POST',
-    headers: {
-      "Accept": "application/json"
-    },
     body: formData,
   })
   .then(response => {
     if (response.ok) {
       alert(`Thanks, ${email}! Your message has been sent.`);
-      form.reset(); // Reset the form fields after submission
+      form.reset();
+    } else {
+      alert("There was an issue with the form submission. Please try again.");
     }
-    // Removed the error alert to prevent false error messages
   })
   .catch(error => {
     console.error('Error:', error);
-    // You can optionally keep this for debugging:
-    // alert('There was an error submitting your message. Please try again.');
+    alert('There was an error submitting your message. Please try again.');
   });
 }
 
@@ -45,7 +44,6 @@ function animateOnScroll() {
 }
 window.addEventListener('scroll', animateOnScroll);
 
-// Canvas background animation
 const canvas = document.getElementById("background-canvas");
 const ctx = canvas.getContext("2d");
 let particles = [];
@@ -86,7 +84,6 @@ class Particle {
     ctx.fill();
   }
 }
-
 for (let i = 0; i < 150; i++) {
   particles.push(new Particle());
 }
@@ -99,5 +96,4 @@ function animateParticles() {
   });
   requestAnimationFrame(animateParticles);
 }
-
 animateParticles();
