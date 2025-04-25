@@ -1,3 +1,4 @@
+// script.js
 function handleSubmit(event) {
   event.preventDefault();
   const form = document.getElementById("contact-form");
@@ -15,6 +16,7 @@ function handleSubmit(event) {
   })
   .then(response => {
     if (response.ok) {
+      // Display your own custom message instead of Formspree's default messages
       alert(`Thanks, ${email}! Your message has been sent.`);
       form.reset();
     } else {
@@ -29,6 +31,7 @@ function handleSubmit(event) {
 
 // Add event listener to form
 document.getElementById("contact-form").addEventListener('submit', handleSubmit);
+
 
 // Function to add an animation class when section is in view
 function animateOnScroll() {
@@ -84,6 +87,7 @@ class Particle {
     ctx.fill();
   }
 }
+
 for (let i = 0; i < 150; i++) {
   particles.push(new Particle());
 }
