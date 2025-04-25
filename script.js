@@ -4,12 +4,16 @@ function handleSubmit(event) {
   const form = document.getElementById("contact-form");
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
+
   // Prepare the data to send via fetch
   const formData = new FormData(form);
 
   // Send form data to Formspree using fetch
   fetch(form.action, {
     method: 'POST',
+    headers: {
+      "Accept": "application/json" // This prevents redirect and avoids CORS issues
+    },
     body: formData,
   })
   .then(response => {
@@ -25,6 +29,7 @@ function handleSubmit(event) {
     alert('There was an error submitting your message. Please try again.');
   });
 }
+
 // Add event listener to form
 document.getElementById("contact-form").addEventListener('submit', handleSubmit);
 
@@ -82,6 +87,7 @@ class Particle {
     ctx.fill();
   }
 }
+
 for (let i = 0; i < 150; i++) {
   particles.push(new Particle());
 }
