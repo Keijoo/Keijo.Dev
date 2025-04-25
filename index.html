@@ -39,7 +39,7 @@
   <section id="about">
     <h3>About Me</h3>
     <div class="about-text">
-    <p>I'm a passionate web developer who is currently studying programming. I love creating interactive experiences and I'm always looking for new ways to combine my skills with my passion for games, technology, and creative problem-solving.</p>
+    <p>I'm a passionate web developer who is currently studying programming . I love creating interactive experiences and I'm always looking for new ways to combine my skills with my passion for games, technology, and creative problem-solving.</p>
     </div>
   </section>
 
@@ -108,21 +108,19 @@
   <section id="contact">
     <h3>Contact Me</h3>
     <form id="contact-form" action="https://formspree.io/f/mwpokzey" method="POST">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-  
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message" required />
-  
+      <input type="email" name="email" id="email" required placeholder="Your Email">
+      <textarea name="message" id="message" required placeholder="Your Message"></textarea>
       <button type="submit">Send</button>
+      <div id="feedback-message"></div> <!-- This is where we'll show messages -->
     </form>
+    
   </section>
 <script>
   document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
   });
+    </script>
 
-</script>
   
   <footer>
     <div class="socials">
